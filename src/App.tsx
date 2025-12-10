@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       {cats.map((cat) => (
-        <img src={cat.url} alt='A cat photo' />
+        <img key={cat.id} src={cat.url} alt='A cat photo' />
       ))}
     </>
   )
