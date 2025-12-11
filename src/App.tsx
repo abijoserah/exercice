@@ -3,6 +3,16 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 
+const catNames = [
+  "Milo", "Luna", "Simba", "Nala", "Oreo", "Bella", "Max", "Misty",
+  "Shadow", "Tiger", "Willow", "Cleo", "Pumpkin", "Snow", "Sushi"
+];
+
+function randomCatName() {
+  return catNames[Math.floor(Math.random() * catNames.length)]
+}
+
+
 function App() {
 
   const [cats, setCats] = useState([])
@@ -16,8 +26,10 @@ function App() {
     loadCats()
   }, [])
 
+
   return (
     <>
+
       {cats.map((cat) => (
         <img key={cat.id} src={cat.url} alt='A cat photo' />
       ))}
